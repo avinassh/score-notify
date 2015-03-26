@@ -21,10 +21,25 @@ Simple python script which displays Cricket Score as notification on OS X. It fe
 
 ## Usage:
 
-    python cric-score-notify.py
+With default settings:
+
+    python cric-score-notify.py 
+
+If you want to change the fetch frequency, like, may be to 30 seconds:
+
+    python cric-score-notify.py -f 30
+
+If Cric Info is blocked on your network, then you can use proxy server to fetch the scores:
+
+    python cric-score-notify.py -f 45 -p True
+
+When in doubt, run for help:
+    
+    python cric-score-notify.py -h
 
 ## To do:
-- fetch frequency
+- ~~fetch frequency~~
+- ~~proxy support~~
 - better UI for notification?
 - tests, CI integration
 - Python 2 support
