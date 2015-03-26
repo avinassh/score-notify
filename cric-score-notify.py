@@ -48,7 +48,7 @@ def main():
 		if score != old_score:
 			old_score = score
 			notify(score)
-		sleep(5)
+		sleep(15)
 		#break
 
 if __name__ == '__main__':
