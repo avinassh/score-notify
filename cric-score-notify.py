@@ -8,9 +8,9 @@ import requests
 from bs4 import BeautifulSoup
 from pync import Notifier
 
-# This script relies on Cricinfo RSS Live Feed (http://static.cricinfo.com/rss/livescores.xml)
+from settings import cric_info_api
 
-cric_info_api = 'http://static.cricinfo.com/rss/livescores.xml'
+# This script relies on Cricinfo RSS Live Feed (http://static.cricinfo.com/rss/livescores.xml)
 
 def notify(text):
 	Notifier.notify(text)

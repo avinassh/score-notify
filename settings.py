@@ -1,0 +1,1 @@
+cric_info_api = 'http://static.cricinfo.com/rss/livescores.xml'
