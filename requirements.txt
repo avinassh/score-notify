@@ -1,0 +1,5 @@
+beautifulsoup4==4.3.2
+pync==1.6.1
+python-dateutil==2.4.1
+requests==2.6.0
+six==1.9.0
