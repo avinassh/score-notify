@@ -34,13 +34,13 @@ def fetch_score_data():
 		url = cric_info_api_with_proxy
 	else:
 		url = cric_info_api
-		
+
 	score_data_raw = requests.get(url)
 	score_data_soup = BeautifulSoup(score_data_raw.text)
 	score_data = score_data_soup.find_all('description')
 
 	if len(score_data) < 2:
-		print('Looks like no matches are live. Script is exiting!')
+		print('\n\nLooks like no matches are live. Script is exiting!\n\n')
 		sys.exit()
 
 	return score_data	
@@ -49,17 +49,19 @@ def fetch_score_data():
 def main():
 	old_score = None
 	score_data = fetch_score_data()
-	print('Following live scores are available now')
+	print('\nFollowing live scores are available now:\n')
 	# the first element is always 
 	# <description>Latest scores from Cricinfo</description>
 	for i, game in enumerate(score_data[1:], 1): 
 		print(i, game.text)
 
-	game_indentifier = int(input('Enter your choice: '))
+	game_indentifier = int(input('\n\nEnter your choice: '))
 
 	if game_indentifier >= len(score_data) or game_indentifier < 1:
-		print('Err, wrong choice. I am exiting')
+		print('\nErr, wrong choice. I am exiting')
 		sys.exit()
+
+	print ('\n\nGreat! I will keep displaying the scores now for every %s seconds. And proxy set is to %s.\n\n' % (fetch_frequency, use_proxy))
 
 	while True:
 		score_data = fetch_score_data()
